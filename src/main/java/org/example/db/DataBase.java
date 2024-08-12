@@ -13,9 +13,9 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 public class DataBase {
-    private static final String URL = "jdbc:postgresql://localhost:5433/car_shop";
+    private static final String URL = "jdbc:postgresql://localhost:5432/car_shop";
     private static final String USER = "admin";
-    private static final String PASSWORD = "admin123";
+    private static final String PASSWORD = "passwordP";
     //private static final String URL = "jdbc:postgresql://localhost:5432/car_shop";
 //    private static final String USER = "user";
 //    private static final String PASSWORD = "password";
@@ -23,9 +23,8 @@ public class DataBase {
     public Statement statement;
 
     public DataBase() throws SQLException {
-        try {
-            connection = DriverManager.getConnection(URL, USER, PASSWORD);
-            statement = connection.createStatement();
+        try (Connection connection = DriverManager.getConnection(URL, USER, PASSWORD)) {
+            Statement statement = connection.createStatement();
         } catch (SQLException e) {
             System.out.println("SQL  " + e.getMessage());
             e.printStackTrace();

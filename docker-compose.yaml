@@ -1,0 +1,33 @@
+# Запустить этот файл через командную строку или через среду разработки
+
+# Для создания и заполнения таблиц запустить метод main.start() в Main, его надо удалить или скрыть после первого выполнения
+
+
+
+
+version: '3'
+
+
+
+
+services:
+
+  postgres:
+
+    image: 'postgres:13'
+
+    container_name: 'car_shop'
+
+    ports:
+
+      - "5432:5432"
+
+    environment:
+
+      - 'POSTGRES_USER=admin'
+
+      - 'POSTGRES_PASSWORD=passwordP'
+
+      - 'POSTGRES_HOST_AUTH_METHOD=trust'
+
+      - 'POSTGRES_DB=car_shop'

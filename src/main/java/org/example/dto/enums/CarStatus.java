@@ -1,6 +1,6 @@
 package org.example.dto.enums;
 
-public enum CarSatus {
+public enum CarStatus {
     free("free"),
     sold("sold"),
     forService("forService");
@@ -8,7 +8,7 @@ public enum CarSatus {
     public String getStatus(){
         return status;
     }
-    CarSatus (String status){
+    CarStatus (String status){
         this.status = status;
     }
 
